@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>QUESTIONS</title>
+  <script>
+  function checkAnswers() {
+            const answers = {
+                q1: 'a',
+                q2: 'd',
+                q3: 'b',
+                q4: 'c',
+                q5: 'b'
+            };
+
+            let score = 0;
+
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = `You scored ${score} out of ${Object.keys(answers).length}.`;
+        }
+  </script>
+</head>
+<body>
+  <h1>
+    QUESTIONS
+  </h1>
+  <p><b>INSTRUCTIONS: PICK THE CORRECT ANSWER FROM THE OPTIONS A-D. <br>CROSS-CHECK BEFORE SUBMITING AND SCROLL DOWN TO CHECK YOUR SCORE.</b></p>
+  <div id="tab">
+  <span class="question">
+  <h2>1.WHAT IS THE HIGHEST MOUNTAIN IN THE WORLD? </h2>
+   <span class="options">
+  <label><input type="radio" name="q1" value="a">A.MOUNT EVEREST</label><br>
+  <label><input type="radio" name="q1" value="b">B.MOUNT OLYMPUS</label><br>
+  <label><input type="radio" name="q1" value="c">C.MOUNT PUNKA JAYA</label><br>
+  <label><input type="radio" name="q1" value="d">D.MOUNT K2</label><br>
+      </span>
+      </span>
+     <span class="question">
+  <h2>2.WHAT IS THE LARGEST COUNTRY BY LAND MASS IN THE WORLD? </h2>
+  <span class="options">
+  <label><input type="radio" name="q2" value="a">A.CANADA</label><br>
+  <label><input type="radio" name="q2" value="b">B.USA</label><br>
+  <label><input type="radio" name="q2" value="c">C.UKRAINE</label><br>
+  <label><input type="radio" name="q2" value="d">D.RUSSIA</label><br>
+     </span>
+        </span>
+    <span class="question">
+  <h2>3.WHAT IS THE MOST POPULATED COUNTRY IN THE WORLD? </h2>
+      <span class="options">
+  <label><input type="radio" name="q3" value="a">A.NIGERIA</label><br>
+  <label><input type="radio" name="q3" value="b">B.CHINA</label><br>
+  <label><input type="radio" name="q3" value="c">C.INDIA</label><br>
+  <label><input type="radio" name="q3" value="d">D.SOUTH AFRICA</label><br>
+   </span>
+ </span>
+    <span class="question">
+  <h2>4.WHAT THE RICHEST COUNTRY IN THE WORLD? </h2>
+      <span class="options">
+  <label><input type="radio" name="q4" value="a">A.SOUTH ARICA</label><br>
+  <label><input type="radio" name="q4" value="b">B.USA</label><br>
+  <label><input type="radio" name="q4" value="c">C.LUXEMBORG</label><br>
+  <label><input type="radio" name="q4" value="d">D.QATAR</label><br>
+        </span> 
+         </span>
+        <span class="question">
+  <h2>5.WHAT IS THE LARGEST OCEAN IN THE WORLD? </h2>
+          <span class="options">
+  <label><input type="radio" name="q5" value="a">A.ANTLATIC OCEAN</label><br>
+  <label><input type="radio" name="q5" value="b">B.PACIFIC OCEAN</label><br>
+  <label><input type="radio" name="q5" value="c">C.INDIAN OCEAN</label><br>
+  <label><input type="radio" name="q5" value="d">D.ARTIC OCEAN</label><br>
+          </span>
+           </span>
+  </div>
+  <button id="res" onclick = "checkAnswers()">SUBMIT</button>
+  <h1 id="results"></h1>
+</body>
+</html>

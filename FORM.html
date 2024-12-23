@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="formstyle.css">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>REGISTRATION FORM</title>
+  <script>
+  function checkForm(form) {
+    for (var i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].value == “”) {
+            alert(“Fill out ALL fields.”)
+            return false
+        } 
+    }
+    return true
+  }
+  </script>
+</head>
+<body>
+  <h1>
+    WELCOME TO GEOEXAM. INPUT YOUR FACTS BELOW.
+  </h1>
+  <form>
+    <label><b>NAME:</b></label><br>
+    <input placeholder="Name" type="text"><br><br>
+    <label><b>REGISTRATION NUMBER:</b></label><br>
+    <input placeholder="REGISTRATION NUMBER"type="text">
+  </form>
+  <button><a href="Questions.html">LOGIN</a></button>
+</body>
+</html>
